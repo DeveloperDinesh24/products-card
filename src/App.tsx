@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import type { ProductData } from './types/product'
 import ProductCard from './Components/ProductCard'
+import ShimmerCard from './Components/ShimmerCard'
 
 function App() {
   const [productsData, setProductsData] = useState<ProductData[]>([])
@@ -37,10 +38,14 @@ function App() {
         placeholder='Search product...'
         className='w-72 h-10 py-1 px-2 text-xl bg-slate-400 outline-0 outline-slate-700 focus:outline rounded ml-8'
       />
-      <main className='h-full w-full max-[1536px]:justify-around flex flex-wrap justify-between items-stretch gap-12'>
-        {filteredProducts.map((product: ProductData) => {
-          return <ProductCard key={product.id} product={product} />
-        })}
+      <main className='h-full w-full flex flex-wrap justify-center gap-12'>
+        {isProductsDataEmpty
+          ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((n) => (
+              <ShimmerCard key={n} />
+            ))
+          : filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
       </main>
     </div>
   )
