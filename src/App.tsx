@@ -9,8 +9,10 @@ function App() {
   const isProductsDataEmpty = productsData.length === 0 ? true : false
   const [searchTerm, setSearchTerm] = useState('')
 
-  const filteredProducts = productsData.filter((product) =>
-    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = productsData.filter(
+    (product) =>
+      product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   useEffect((): void => {
