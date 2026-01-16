@@ -39,7 +39,7 @@ function App() {
           type='text'
           value={searchTerm}
           placeholder='Search product...'
-          className='w-72 h-10 py-1 px-2 text-xl bg-slate-400 outline-0 outline-slate-700 focus:outline rounded ml-8'
+          className='w-72 h-10 py-1 px-2 text-xl bg-slate-400 outline-0 outline-slate-700 focus:outline rounded mx-auto sm:ml-8'
         />
         <main className='h-full w-full flex flex-wrap justify-center gap-12'>
           {isProductsDataEmpty
