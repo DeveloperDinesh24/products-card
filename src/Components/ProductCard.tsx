@@ -9,7 +9,7 @@ const ProductCard = function ({ product }: ProductCardProps) {
     <div className='w-84 bg-slate-400 border rounded-lg overflow-hidden relative'>
       <img
         src={product.images[0]}
-        className='w-full h-1/2 object-cover cursor-pointer hover:scale-110 transition-transform duration-300'
+        className='w-full h-1/2 cursor-pointer hover:scale-110 transition-transform duration-300'
       />
       <div className='p-4 h-full border-t bg-green-300'>
         <h2 className='text-lg font-semibold'>

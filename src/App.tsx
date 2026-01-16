@@ -30,23 +30,25 @@ function App() {
   }
 
   return (
-    <div className='w-full min-h-dvh h-full bg-slate-300 flex flex-col gap-16 px-6 py-12'>
-      <input
-        onChange={handleChange}
-        type='text'
-        value={searchTerm}
-        placeholder='Search product...'
-        className='w-72 h-10 py-1 px-2 text-xl bg-slate-400 outline-0 outline-slate-700 focus:outline rounded ml-8'
-      />
-      <main className='h-full w-full flex flex-wrap justify-center gap-12'>
-        {isProductsDataEmpty
-          ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((n) => (
-              <ShimmerCard key={n} />
-            ))
-          : filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-      </main>
+    <div className=' bg-slate-300'>
+      <div className='w-full min-h-dvh max-w-400 mx-auto h-full flex flex-col gap-16 px-6 py-12'>
+        <input
+          onChange={handleChange}
+          type='text'
+          value={searchTerm}
+          placeholder='Search product...'
+          className='w-72 h-10 py-1 px-2 text-xl bg-slate-400 outline-0 outline-slate-700 focus:outline rounded ml-8'
+        />
+        <main className='h-full w-full flex flex-wrap justify-center gap-12'>
+          {isProductsDataEmpty
+            ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((n) => (
+                <ShimmerCard key={n} />
+              ))
+            : filteredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+        </main>
+      </div>
     </div>
   )
 }
