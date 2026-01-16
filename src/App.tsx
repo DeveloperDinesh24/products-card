@@ -18,6 +18,9 @@ function App() {
     fetch('https://dummyjson.com/products')
       .then((res) => res.json())
       .then((data): void => setProductsData(() => data.products))
+      .catch((error) => {
+        console.error('Error fetching or parsing JSON:', error)
+      })
   }, [])
 
   if (!isProductsDataEmpty) {
@@ -26,15 +29,18 @@ function App() {
 
   return (
     <>
-      <main className='h-full w-full p-6 bg-slate-300 flex flex-wrap justify-between gap-12'>
+      <main className='h-full w-full max-[1536px]:justify-around p-6 bg-slate-300 flex flex-wrap justify-between items-stretch gap-12'>
         {productsData.map((product: ProductData) => {
           return (
             <div
               key={product.id}
-              className='w-84 h-fit bg-slate-400 border rounded-lg overflow-hidden'
+              className='w-84 bg-slate-400 border rounded-lg overflow-hidden relative'
             >
-              <img src={product.images[0]} className='w-full border-b' />
-              <div className='p-4 bg-green-300'>
+              <img
+                src={product.images[0]}
+                className='w-full cursor-pointer hover:scale-110 transition-transform duration-300'
+              />
+              <div className='p-4 h-full border-t bg-green-300'>
                 <h2 className='text-lg font-semibold'>
                   Name: <span className='font-normal'>{product.title}</span>
                 </h2>
