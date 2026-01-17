@@ -27,7 +27,7 @@ export default function HomePage({ searchTerm, handleChange, isProductsDataEmpty
                 <ShimmerCard key={n} />
               ))
             : filteredProducts.map((product) => (
-                <Link key={product.id} to={product.title}>
+                <Link key={product.id} to={`/product/${product.id}`}>
                   <ProductCard product={product} />
                 </Link>
               ))}
