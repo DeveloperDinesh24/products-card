@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import ShimmerCard from "../components/ShimmerCard";
-import ProductCard from "../components/ProductCard";
+import { Link } from 'react-router-dom'
+import ShimmerCard from '../components/ShimmerCard'
+import ProductCard from '../components/ProductCard'
 import type { ProductData } from '../types/product'
 
 interface PassedProps {
@@ -10,7 +10,12 @@ interface PassedProps {
   filteredProducts: ProductData[]
 }
 
-export default function HomePage({ searchTerm, handleChange, isProductsDataEmpty, filteredProducts }: PassedProps) {
+export default function HomePage({
+  searchTerm,
+  handleChange,
+  isProductsDataEmpty,
+  filteredProducts,
+}: PassedProps) {
   return (
     <div className=' bg-slate-300'>
       <div className='w-full min-h-dvh max-w-400 mx-auto h-full flex flex-col gap-16 px-6 py-12'>
